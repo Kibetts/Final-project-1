@@ -1,0 +1,16 @@
+#navbar{
+    display: flex;
+}
+#navbar ul{
+    display: flex;
+    list-style: none;
+    padding: 50px;
+}
+
+#navbar ul a{
+    text-decoration: none;
+    padding: 30px;
+    font-size: 30px;
+    padding-left: 90px;
+    margin-left: 60px;
+}
