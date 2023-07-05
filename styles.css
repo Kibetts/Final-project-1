@@ -13,4 +13,20 @@
     font-size: 30px;
     padding-left: 90px;
     margin-left: 60px;
+    color: orange;
+    font-family: 'Indie Flower';
+}
+#logo{
+    height:200px ;
+    width:200px ;
+    border-radius: 50%;
+}
+h1{
+    margin-left: 150px;
+    padding: 10px;
+    font-size: 130px;
+    font-family: 'Indie Flower';
+}
+#thought{
+    color: orange;
 }
