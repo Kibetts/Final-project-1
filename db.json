@@ -1,0 +1,69 @@
+{
+    "books":[
+        {
+            "id": 1,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 2,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 3,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 4,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 5,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 6,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 7,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        },
+        {
+            "id": 8,
+            "name": "",
+            "image": "",
+            "Author": "",
+            "Publisher": "",
+            "Page count": ""
+        }
+
+    ]
+}

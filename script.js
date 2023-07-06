@@ -1,4 +1,4 @@
-function showbook(){
+function showBook(){
 
     let card = document.createElement("li");
     card.className = "card";
