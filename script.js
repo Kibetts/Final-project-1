@@ -6,9 +6,9 @@ function showBook(){
 
 
         <div class="cardContainer">
-        <img src="">
+        <img src="${book.image}">
         <div id="details">
-        <p></p>
+        <p>${book.name}</p>
         </div>
         <div></div>
         </div>
@@ -16,3 +16,11 @@ function showBook(){
         `
    document.querySelector("main").appendChild(card);
     }
+
+function getBooks(){
+    fetch("https://bookdata-xji4.onrender.com/books")
+    .then(books => books.json())
+    .then(books => books.forEach(book =>{
+        showBook(book)
+    }))
+}
