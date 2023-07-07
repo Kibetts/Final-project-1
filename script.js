@@ -10,6 +10,10 @@ function showBook(book){
   image.src = book.image;
   image.alt = "Book Image";
 
+  image.addEventListener("click", () => {
+    renderBookDetails(book);
+  });
+
     
    document.querySelector("#main").appendChild(card);
     }
