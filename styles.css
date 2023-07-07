@@ -39,8 +39,9 @@ h1{
   }
 
 .card {
-    width: calc(25% - 20px); /* Adjust the width as needed */
-    margin-bottom: 20px; /* Adjust the margin as needed */
+    width: calc(25% - 20px); 
+    margin-bottom: 20px; 
+
   }
 
 footer{

@@ -2,18 +2,15 @@ function showBook(book){
 
     let card = document.createElement("li");
     card.className = "card";
-    card.innerHTML =`
 
+    let bookContainer = document.createElement("div");
+  bookContainer.className = "bookContainer";
 
-        <div class="cardContainer" >
-     <img src="${book.image}"  style ="width:200px; height:300px">
-        <div id="details" >
-        <p >${book.name}</p>
-        </div>
-        <div></div>
-        </div>
+  let image = document.createElement("img");
+  image.src = book.image;
+  image.alt = "Book Image";
 
-        `
+    
    document.querySelector("#main").appendChild(card);
     }
 
