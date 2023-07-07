@@ -20,10 +20,17 @@ function showBook(book){
   let title = document.createElement("p");
   title.textContent = book.name;
     
+  detailsContainer.appendChild(title);
+  
+  bookContainer.appendChild(image);
+  bookContainer.appendChild(detailsContainer);
+  
+  card.appendChild(bookContainer);
+
    document.querySelector("#main").appendChild(card);
     }
 
-function RenderBookDetails(){
+function RenderBookDetails(book){
 
     }
 
