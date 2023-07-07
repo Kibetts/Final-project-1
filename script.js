@@ -2,35 +2,24 @@ function showBook(book){
 
     let card = document.createElement("li");
     card.className = "card";
+    card.innerHTML =`
 
-    let bookContainer = document.createElement("div");
-  bookContainer.className = "bookContainer";
 
-  let image = document.createElement("img");
-  image.src = book.image;
-  image.alt = "Book Image";
+        <div class="cardContainer" >
+      <img src="${book.image}"  style ="width:200px; height:300px">
+        <div id="details" >
+        <p >${book.name}</p>
+        </div>
+        <div></div>
+        </div>
 
-  image.addEventListener("click", () => {
-    renderBookDetails(book);
-  });
-
-  let detailsContainer = document.createElement("div");
-  detailsContainer.className = "detailsContainer";
-
-  let title = document.createElement("p");
-  title.textContent = book.name;
+        `
     
-  detailsContainer.appendChild(title);
-  
-  bookContainer.appendChild(image);
-  bookContainer.appendChild(detailsContainer);
-  
-  card.appendChild(bookContainer);
 
    document.querySelector("#main").appendChild(card);
     }
 
-function RenderBookDetails(book){
+function RenderBookDetails(){
 
     }
 
