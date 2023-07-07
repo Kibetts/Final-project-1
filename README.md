@@ -39,4 +39,4 @@ Under this software license agreement, the author grants to the user a non exclu
 
 [Slack](https://moringa.instructure.com/profile)
 
-[Render] (https://bookdata-xji4.onrender.com)
+[Render](https://bookdata-xji4.onrender.com)
