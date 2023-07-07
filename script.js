@@ -1,20 +1,24 @@
-function showBook(){
+function showBook(book){
 
     let card = document.createElement("li");
     card.className = "card";
     card.innerHTML =`
 
 
-        <div class="cardContainer">
-        <img src="${book.image}">
-        <div id="details">
-        <p>${book.name}</p>
+        <div class="cardContainer" >
+     <img src="${book.image}"  style ="width:200px; height:300px">
+        <div id="details" >
+        <p >${book.name}</p>
         </div>
         <div></div>
         </div>
 
         `
-   document.querySelector("main").appendChild(card);
+   document.querySelector("#main").appendChild(card);
+    }
+
+function RenderBookDetails(){
+
     }
 
 function getBooks(){
@@ -24,3 +28,4 @@ function getBooks(){
         showBook(book)
     }))
 }
+document.addEventListener("DOMContentLoaded", getBooks());
