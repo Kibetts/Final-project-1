@@ -14,6 +14,11 @@ function showBook(book){
     renderBookDetails(book);
   });
 
+  let detailsContainer = document.createElement("div");
+  detailsContainer.className = "detailsContainer";
+
+  let title = document.createElement("p");
+  title.textContent = book.name;
     
    document.querySelector("#main").appendChild(card);
     }
