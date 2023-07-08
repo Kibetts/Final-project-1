@@ -60,8 +60,9 @@ function showBook(book){
         <div class="actions">
       <button type="button" id="like-button-${book.id}">Like
       
-      <span class="heart-icon">&#10084;</span>
-      <span class="like-count">${book.likes}</span>
+      <span class="like-count">${book.likes ? book.likes : 0}</span>
+<span class="heart-icon ${book.likes ? 'liked' : ''}">&#10084;</span>
+
 
       </button>
     </div>
@@ -92,7 +93,8 @@ function showBook(book){
    document.querySelector("#main").appendChild(card);
     }
     
-    function likeBook(bookId, likeButton) {
+function likeBook(bookId, likeButton) {
+
       fetch(`https://bookdata-xji4.onrender.com/books/${bookId}`, {
         method: "PATCH",
         headers: {
@@ -102,19 +104,16 @@ function showBook(book){
       })
       .then(response => response.json())
       .then(updatedBook => {
+        const likeCountElement = likeButton.querySelector(".like-count");
+        const heartIcon = likeButton.querySelector(".heart-icon");
     
-// Update the UI with the updated like count and button style
-const likeCountElement = likeButton.querySelector(".like-count");
-const heartIcon = likeButton.querySelector(".heart-icon");
-
-likeCountElement.textContent = updatedBook.likes;
-heartIcon.classList.add("liked");
-})
-
+        updatedBook.likes = updatedBook.likes || 0;
+        likeCountElement.textContent = updatedBook.likes;
+        heartIcon.classList.toggle("liked");
+    })
+    
       }
       
-    
-    
 
     function getBooks() {
       fetch("https://bookdata-xji4.onrender.com/books")
@@ -129,6 +128,4 @@ heartIcon.classList.add("liked");
       });
     }
     
-
-
 document.addEventListener("DOMContentLoaded", getBooks());
