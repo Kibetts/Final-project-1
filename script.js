@@ -1,4 +1,4 @@
-document.getElementById("subtn").addEventListener("click", submitBook);
+
 
 function submitBook(e){
   e.preventDefault()
@@ -57,6 +57,10 @@ function showBook(book){
         <div id="book-details-${book.id}"></div>
         </div>
 
+        <div class="actions">
+      <button type="button" id="like-button-${book.id}">Like</button>
+    </div>
+
         `;
         let image = card.querySelector("img")
         image.addEventListener("click", ()=>{
@@ -73,6 +77,10 @@ function showBook(book){
           });
         } 
         );
+        const likeButton = card.querySelector(`#like-button-${book.id}`);
+        likeButton.addEventListener('click', () => {
+          likeBook(book.id);
+        })
     
 
    document.querySelector("#main").appendChild(card);
