@@ -86,7 +86,23 @@ function showBook(book){
    document.querySelector("#main").appendChild(card);
     }
     
-
+    function likeBook(bookId) {
+      fetch(`https://bookdata-xji4.onrender.com/books/${bookId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ like: true }),
+      })
+      .then(response => response.json())
+      .then(updatedBook => {
+    
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    }
+    
 
 function getBooks(){
     fetch("https://bookdata-xji4.onrender.com/books")
