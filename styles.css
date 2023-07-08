@@ -116,3 +116,22 @@ footer{
      color: orange;
      font-family: 'Indie Flower';
   }
+
+  .like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .like-button .heart-icon {
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  .like-button .like-count {
+    margin-left: 5px;
+  }
+  
+  .like-button .heart-icon.liked {
+    color: red;
+  }

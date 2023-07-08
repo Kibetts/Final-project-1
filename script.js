@@ -58,7 +58,12 @@ function showBook(book){
         </div>
 
         <div class="actions">
-      <button type="button" id="like-button-${book.id}">Like</button>
+      <button type="button" id="like-button-${book.id}">Like
+      
+      <span class="heart-icon">&#10084;</span>
+      <span class="like-count">${book.likes}</span>
+
+      </button>
     </div>
 
         `;
@@ -71,6 +76,7 @@ function showBook(book){
             <p>Publisher: ${book.Publisher}</p>
             <button  type="button" id="read-button-${book.id}">Read Book</button >
           `;
+
           const readButton = card.querySelector(`#read-button-${book.id}`);
           readButton.addEventListener('click', () => {
             window.open('./assets/Into the Wild PDF.pdf', '_blank');
@@ -79,14 +85,14 @@ function showBook(book){
         );
         const likeButton = card.querySelector(`#like-button-${book.id}`);
         likeButton.addEventListener('click', () => {
-          likeBook(book.id);
+          likeBook(book.id, likeButton);
         })
     
 
    document.querySelector("#main").appendChild(card);
     }
     
-    function likeBook(bookId) {
+    function likeBook(bookId, likeButton) {
       fetch(`https://bookdata-xji4.onrender.com/books/${bookId}`, {
         method: "PATCH",
         headers: {
@@ -97,20 +103,32 @@ function showBook(book){
       .then(response => response.json())
       .then(updatedBook => {
     
+// Update the UI with the updated like count and button style
+const likeCountElement = likeButton.querySelector(".like-count");
+const heartIcon = likeButton.querySelector(".heart-icon");
+
+likeCountElement.textContent = updatedBook.likes;
+heartIcon.classList.add("liked");
+})
+
+      }
+      
+    
+    
+
+    function getBooks() {
+      fetch("https://bookdata-xji4.onrender.com/books")
+      .then(books => books.json())
+      .then(books => {
+        books.forEach(book => {
+          showBook(book);
+        });
       })
       .catch(error => {
         console.error("Error:", error);
       });
     }
     
-
-function getBooks(){
-    fetch("https://bookdata-xji4.onrender.com/books")
-    .then(books => books.json())
-    .then(books => books.forEach(book =>{
-        showBook(book)
-    }))
-}
 
 
 document.addEventListener("DOMContentLoaded", getBooks());
