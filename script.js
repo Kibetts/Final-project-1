@@ -22,9 +22,16 @@ function showBook(book){
             <p>Author: ${book.Author}</p>
             <p>Page Count: ${book['Page count']}</p>
             <p>Publisher: ${book.Publisher}</p>
+            <button  type="button" id="read-button-${book.id}">Read Book</button >
           `;
-        });
+          const readButton = card.querySelector(`#read-button-${book.id}`);
+          readButton.addEventListener('click', () => {
+            window.open('./assets/Into the Wild PDF.pdf', '_blank');
+          });
+        } 
+        );
     
+
    document.querySelector("#main").appendChild(card);
     }
     
