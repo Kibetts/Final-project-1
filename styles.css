@@ -76,17 +76,43 @@ footer{
   #book-form{
     border: 2px solid orange;
     width: 350px;
-    height: 400px;
+    height: 350px;
     padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    margin-left: 200px;
+    box-shadow: 2px 2px 5px orange;
   }
   label{
-    margin-top: 15px;
+    margin-top: 10px;
+    color: orange;
+    font-family: 'Indie Flower';
   }
   input{
     padding: 5px;
     width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+
+  }
+
+  input:hover{
+
+    background-color: orange;
   }
   #subtn{
     padding: 5px;
     margin-top: 8px;
+    background-color: orange;
+    border-radius: 10px;
+    width: 100px;
+    border: 2ps solid orange;
+    font-family: 'Indie Flower';
+  }
+  #subs{
+     margin-left:200px ;
+     text-decoration: underline;
+     color: orange;
+     font-family: 'Indie Flower';
   }
