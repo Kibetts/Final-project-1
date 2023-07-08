@@ -14,6 +14,14 @@ function submitBook(e){
     "Page count": pageCount,
   };
 
+  fetch("https://bookdata-xji4.onrender.com/books", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(book),
+  })
+
 }
 
 function showBook(book){
