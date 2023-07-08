@@ -21,6 +21,18 @@ function submitBook(e){
     },
     body: JSON.stringify(book),
   })
+  .then(response => response.json())
+  .then(newBook => {
+   
+    showBook(newBook);
+
+      
+      document.getElementById("name").value = "";
+      document.getElementById("image_url").value = "";
+      document.getElementById("author").value = "";
+      document.getElementById("publisher").value = "";
+      document.getElementById("page-count").value = "";
+    })
 
 }
 
