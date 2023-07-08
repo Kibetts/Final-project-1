@@ -1,3 +1,13 @@
+function submitBook(e){
+  e.preventDefault()
+  const title = document.getElementById("name").value;
+  const imageUrl = document.getElementById("image_url").value;
+  const author = document.getElementById("author").value;
+  const publisher = document.getElementById("publisher").value;
+  const pageCount = document.getElementById("page-count").value;
+
+}
+
 function showBook(book){
 
     let card = document.createElement("li");
