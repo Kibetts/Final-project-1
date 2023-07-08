@@ -33,6 +33,9 @@ function submitBook(e){
       document.getElementById("publisher").value = "";
       document.getElementById("page-count").value = "";
     })
+    .catch(error => {
+      console.error("Error:", error);
+    });
 
 }
 
