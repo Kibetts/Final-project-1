@@ -6,6 +6,14 @@ function submitBook(e){
   const publisher = document.getElementById("publisher").value;
   const pageCount = document.getElementById("page-count").value;
 
+  const book = {
+    name: title,
+    image: imageUrl,
+    Author: author,
+    Publisher: publisher,
+    "Page count": pageCount,
+  };
+
 }
 
 function showBook(book){
