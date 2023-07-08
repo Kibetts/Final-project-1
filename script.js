@@ -1,3 +1,5 @@
+document.getElementById("subtn").addEventListener("click", submitBook);
+
 function submitBook(e){
   e.preventDefault()
   const title = document.getElementById("name").value;
