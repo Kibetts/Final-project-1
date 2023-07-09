@@ -105,10 +105,14 @@ for (let i = 1; i <= 5; i++) {
 
   ratingContainer.appendChild(star);
 }
+card.appendChild(ratingContainer);
+
     
 
    document.querySelector("#main").appendChild(card);
     }
+    
+
     
 function likeBook(bookId, likeButton) {
 
@@ -144,5 +148,18 @@ function likeBook(bookId, likeButton) {
         console.error("Error:", error);
       });
     }
+
+    function rateBook(bookId, rating) {
+      fetch(`https://bookdata-xji4.onrender.com/books/${bookId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ rating: rating }),
+      })
+        .then(response => response.json())
+        .then(updatedBook => {
+         
+          book.rating = updatedBook.rating;})}
     
 document.addEventListener("DOMContentLoaded", getBooks());
