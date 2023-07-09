@@ -159,7 +159,23 @@ function likeBook(bookId, likeButton) {
       })
         .then(response => response.json())
         .then(updatedBook => {
-         
-          book.rating = updatedBook.rating;})}
+        
+          book.rating = updatedBook.rating;
+
+          
+      const stars = card.querySelectorAll(".star");
+      stars.forEach((star, index) => {
+        if (index < updatedBook.rating) {
+          star.classList.add("filled");
+        } else {
+          star.classList.remove("filled");
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+}
+
     
 document.addEventListener("DOMContentLoaded", getBooks());
