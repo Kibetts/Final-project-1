@@ -14,6 +14,7 @@ function submitBook(e){
     Author: author,
     Publisher: publisher,
     "Page count": pageCount,
+    rating: 0
   };
 
   fetch("https://bookdata-xji4.onrender.com/books", {
@@ -88,6 +89,22 @@ function showBook(book){
         likeButton.addEventListener('click', () => {
           likeBook(book.id, likeButton);
         })
+
+      
+const ratingContainer = document.createElement("div");
+ratingContainer.classList.add("rating-container");
+
+
+for (let i = 1; i <= 5; i++) {
+  const star = document.createElement("span");
+  star.classList.add("star");
+
+  star.addEventListener("click", () => {
+    rateBook(book.id, i); 
+  });
+
+  ratingContainer.appendChild(star);
+}
     
 
    document.querySelector("#main").appendChild(card);
